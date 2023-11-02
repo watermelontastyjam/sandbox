@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(130, 177, 161);
+}
+.toMargin{
+    margin: auto;
+}
+li{
+    color:rgb(19, 99, 99);
+    font: size 17px;
+    font-style:italic;
+}
+h2,h1{
+    font-variant: small-caps;
+}
+p{
+    font-size: 19px;
+}
