@@ -1,8 +1,16 @@
 body{
     background-color: rgb(130, 177, 161);
+    background-image: url("images/flowers.jpg");
 }
-.toMargin{
-    margin: auto;
+.content{
+    margin-top: 100px;
+}
+.content-left{
+    float:left;
+}
+.content-right{
+    float:right;
+
 }
 li{
     color:rgb(19, 99, 99);
