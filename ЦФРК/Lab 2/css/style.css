@@ -11,7 +11,7 @@ body{
     border: solid black 2px;
     border-radius: 10px; 
     background-color: beige; 
-    padding:5px;
+    padding: 50px;
     width: 70%;
 }
 .content-right{
@@ -21,7 +21,7 @@ body{
     border: solid black 2px;
     border-radius:10px;
     margin-left:50px;
-    padding: 2%;
+    padding: 20px;
     
 }
 li{
@@ -34,7 +34,7 @@ h1{
     font-variant: small-caps;
 }
 h2{
-    font-size: 50px;
+    font-size: 40px;
     font-variant: small-caps;
 }
 p{
