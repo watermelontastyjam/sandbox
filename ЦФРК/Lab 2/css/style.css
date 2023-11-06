@@ -3,23 +3,40 @@ body{
     background-image: url("images/flowers.jpg");
 }
 .content{
+    display:flex;
     margin-top: 100px;
 }
 .content-left{
     float:left;
+    border: solid black 2px;
+    border-radius: 10px; 
+    background-color: beige; 
+    padding:5px;
+    width: 70%;
 }
 .content-right{
     float:right;
-
+    background-color:rgb(243, 243, 243);
+    width:30%; 
+    border: solid black 2px;
+    border-radius:10px;
+    margin-left:50px;
+    padding: 2%;
+    
 }
 li{
     color:rgb(19, 99, 99);
-    font: size 17px;
+    font-size: 30px;
     font-style:italic;
 }
-h2,h1{
+h1{
+    font-size: 60px;
+    font-variant: small-caps;
+}
+h2{
+    font-size: 50px;
     font-variant: small-caps;
 }
 p{
-    font-size: 19px;
+    font-size: 30px;
 }
