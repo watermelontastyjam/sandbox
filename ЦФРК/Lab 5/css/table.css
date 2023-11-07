@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(130, 177, 161);
+    background-image: url("images/flowers.jpg");
+}
+a{
+    color:rgb(62, 90, 81);
+    font-size: 25px;
+    text-decoration:none;
+    font-variant: small-caps;
+
+}
+
+.header{
+    display:flex;
+    position:fixed;
+    top: 0;
+    
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 220); 
+
+    height: 50px;
+    width: 99%;
+}
+.main_content{
+    display:flex;
+    flex-direction: row;
+    margin-top: 70px;
+
+    width:99%;
+    
+}
+table{
+    position: relative;
+    left:0;
+}
+table,th,td{
+    width:35%;
+    text-align: left;
+    border: solid black 2px;
+    border-collapse:collapse;
+    color:rgb(53, 53, 53);
+
+}
+th,td{
+    padding:10px;
+}
+th{
+    background-color: rgb(132, 187, 172);
+}
+tr:nth-child(even){
+    background-color: rgb(155, 211, 193);
+}
+tr:nth-child(odd){
+    background-color: rgb(207, 211, 155);
+}
+tr:hover{
+    background-color: aquamarine;
+}
+#form{
+    margin:auto;
+    width:35%;
+
+}
+#submit_form{
+    margin-top:10px;
+    padding: 5px;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "css/table.css" />
+        <tytle>Лабораторная работа 5</tytle>
+        
+    </head>
+    <body>
+        <div class = "content">   
+            <div class="header">
+                <div >
+                    <a href="page2.html">Ссылка на 2ю страницу</a>
+                </div>
+                <div>
+                    <a href="page1.html">Ссылка на основную страницу</a>
+                </div>
+                <div>
+                    <a href="table.html">Ссылка на таблицу</a>
+                </div>
+            </div>
+            <div class = "main_content">
+                
+                <table>
+                    <caption style=" font-size: 30px;">Список студентов</caption>
+                    <tr>
+                        <th>Id</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Номер группы</th>
+                        <th>Пол</th>
+                        <th>Возраст</th>
+                        <th>Название направления</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Фарит</td>
+                        <td>Валеев</td>
+                        <td>6203</td>
+                        <td>М</td>
+                        <td>19</td>
+                        <td>ПМИ</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Роберт</td>
+                        <td>Среда</td>
+                        <td>6203</td>
+                        <td>М</td>
+                        <td>19</td>
+                        <td>ПМИ</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Виктор</td>
+                        <td>Ксеноморфов</td>
+                        <td>6203</td>
+                        <td>М</td>
+                        <td>19</td>
+                        <td>ПМИ</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Егор</td>
+                        <td>Гапоненко</td>
+                        <td>6203</td>
+                        <td>М</td>
+                        <td>19</td>
+                        <td>ПМИ</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Владислав</td>
+                        <td>Лом</td>
+                        <td>6203</td>
+                        <td>М</td>
+                        <td>19</td>
+                        <td>ПМИ</td>
+                    </tr>
+                </table>
+
+                
+                <form id="form">
+                    <lable for = "fname">Id:</lable><br>
+                    <input type = "text" id="fid" name = "fid" value = "1"><br>
+                    <lable for = "fname">Имя:</lable><br>
+                    <input type = "text" id="fname" name = "fname" value = "Иван"><br>
+                    <lable for = "fsurname">Фамилия:</lable><br>
+                    <input type = "text" id="fsurname" name = "fsurname" value = "Иванов"><br>
+                    <lable for = "fgroup">Группа:</lable><br>
+                    <input type = "text" id="fgroup" name = "fgroup" value = "6203"><br>
+                    <lable for = "fsex">Пол:</lable><br>
+                    <input type = "text" id="fsex" name = "fsex" value = "М"><br>
+                    <lable for = "fage">Возраст:</lable><br>
+                    <input type = "text" id="fage" name = "fage" value = "18"><br>
+                    <lable for = "fspeciality">Направление:</lable><br>
+                    <input type = "text" id ="fspeciality" name = "fspeciality" value = "ПМИ"><br>
+                    <input id="submit_form" type = "submit" value="Добавить">
+                </form>
+                
+            </div>
+        </div>
+    </body>
+</html>
