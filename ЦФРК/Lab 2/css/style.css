@@ -4,10 +4,11 @@ body{
 }
 .content{
     display:flex;
+    justify-content: space-between;
     margin-top: 100px;
 }
 .content-left{
-    float:left;
+    
     border: solid black 2px;
     border-radius: 10px; 
     background-color: beige; 
@@ -15,7 +16,7 @@ body{
     width: 70%;
 }
 .content-right{
-    float:right;
+
     background-color:rgb(243, 243, 243);
     width:30%; 
     border: solid black 2px;

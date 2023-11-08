@@ -24,7 +24,7 @@
         </nav>
         <div data-bs-spy="scroll">
             <div id="demo" class = "carousel slide" data-bs-ride="carouser" style="width:100%;margin: auto;">
-                <div class = "carousel-indicators">
+                <div  class = "carousel-indicators">
                     <button type = "button" data-bs-target="#demo" data-bs-slide-to="0" class = "active"></button>
                     <button type = "button" data-bs-target="#demo" data-bs-slide-to="1" ></button>
                     <button type = "button" data-bs-target="#demo" data-bs-slide-to="2" ></button>
@@ -81,7 +81,7 @@
 
 
         </div>
-        <div style = "display: flex;">
+        <div id ="cards"style = "display: flex;">
             <div class="container mt-3" style = "width:800px;">
                 <div class = "card" style = "display:flex; flex-direction: row;">
                     <div class = "card" style = "width: 400px">
@@ -125,6 +125,21 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div data-bs-slide = "scroll" data-bs-target="navbar" data-bs-offset="50">
+            <nav class = "navbar navbar-expand-sm bg-dark fixed-bottom" style="width:100px;">
+                <div class = "container-fluid">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class = "nav-link" href = "#demo" style = "color:white;">Фото</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class = "nav-link" href = "#cards" style = "color:white;">Фильмы</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
         </div>
     </body>
 </html>
