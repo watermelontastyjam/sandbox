@@ -8,133 +8,184 @@
         <link rel = "stylesheet" type = "text/css" src = "css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body style = "background-color: rgb(219, 219, 219);">
-        
-        <nav class = "navbar navbar-expand-sm bg-info">
-            <div class="container-fluid justify-content-center nav-pills">
-                <ul class="navbar-nav ">
-                    <li class = "nav-item">
-                        <a class="nav-link active" href = "info.html">Информация</a>
-                    </li>
-                    <li class = "nav-item">
-                        <a class="nav-link" href = "films.html">Фильмы</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div data-bs-spy="scroll">
-            <div id="demo" class = "carousel slide" data-bs-ride="carouser" style="width:100%;margin: auto;">
-                <div  class = "carousel-indicators">
-                    <button type = "button" data-bs-target="#demo" data-bs-slide-to="0" class = "active"></button>
-                    <button type = "button" data-bs-target="#demo" data-bs-slide-to="1" ></button>
-                    <button type = "button" data-bs-target="#demo" data-bs-slide-to="2" ></button>
+    <body style = "background-color: rgb(219, 219, 219); display:flex; flex-direction: column; ">
+        <div >
+            <nav class = "navbar navbar-expand-sm bg-info">
+                <div class="container-fluid justify-content-center nav-pills">
+                    <ul class="navbar-nav ">
+                        <li class = "nav-item">
+                            <a class="nav-link active" href = "info.html">Информация</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a class="nav-link" href = "films.html">Фильмы</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class = "carousel-inner">
-                    <div class = "carousel-item active">
-                        <img 
-                            src="https://s0.rbk.ru/v6_top_pics/media/img/6/82/756632714377826.jpg"
-                            alt="Ryan Reynolds"
-                            class="d-block"
-                            style="width:100%; height: 500px;"
-                        />
-                        <div class = "carousel-caption">
-                            <h3 style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Ryan Reynolds</h3>
-                            <p style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Beautiful!</p>
+            </nav>
+            <div  id = "actors-photos" data-bs-spy="scroll">
+                <div id="demo" class = "carousel slide" data-bs-ride="carouser" style="width:100%;margin: auto;">
+                    <div  class = "carousel-indicators">
+                        <button type = "button" data-bs-target="#demo" data-bs-slide-to="0" class = "active"></button>
+                        <button type = "button" data-bs-target="#demo" data-bs-slide-to="1" ></button>
+                        <button type = "button" data-bs-target="#demo" data-bs-slide-to="2" ></button>
+                    </div>
+                    <div class = "carousel-inner">
+                        <div class = "carousel-item active">
+                            <img 
+                                src="https://s0.rbk.ru/v6_top_pics/media/img/6/82/756632714377826.jpg"
+                                alt="Ryan Reynolds"
+                                class="d-block"
+                                style="width:100%; height: 900px;"
+                            />
+                            <div class = "carousel-caption">
+                                <h3 style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Ryan Reynolds</h3>
+                                <p style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Beautiful!</p>
+                            </div>
+
+                        </div>
+                        <div class = "carousel-item">
+                            <img 
+                                src="https://cdnn21.img.ria.ru/images/149269/95/1492699574_0:175:3020:1874_1920x0_80_0_0_3f629223f4fd6bf6e87cbad48947e61d.jpg"
+                                alt="Ryan Reynolds"
+                                class="d-block"
+                                style="width:100%; height: 900px;"
+                            />
+                            <div class = "carousel-caption">
+                                <h3 style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Ryan Reynolds</h3>
+                                <p style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Handsome!</p>
+                            </div>
+                        </div>
+                        <div class = "carousel-item">
+                            <img 
+                                src="https://www.m24.ru/b/d/nBkSUhL2hFcunc-0Jr6BrNOp2Z3z8Zj21iDEh_fH_nKUPXuaDyXTjHou4MVO6BCVoZKf9GqVe5Q_CPawk214LyWK9G1N5ho=zDY7WvKbDeeMYdeUPreqag.jpg"
+                                alt="Ryan Reynolds"
+                                class="d-block"
+                                style="width:100%; height: 900px;"
+                            />
+                            <div class = "carousel-caption">
+                                <h3 style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Ryan Reynolds</h3>
+                                <p style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Handsome!</p>
+                            </div>
+
                         </div>
 
                     </div>
-                    <div class = "carousel-item">
-                        <img 
-                            src="https://cdnn21.img.ria.ru/images/149269/95/1492699574_0:175:3020:1874_1920x0_80_0_0_3f629223f4fd6bf6e87cbad48947e61d.jpg"
-                            alt="Ryan Reynolds"
-                            class="d-block"
-                            style="width:100%; height: 500px;"
-                        />
-                        <div class = "carousel-caption">
-                            <h3 style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Ryan Reynolds</h3>
-                            <p style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Handsome!</p>
-                        </div>
-                    </div>
-                    <div class = "carousel-item">
-                        <img 
-                            src="https://www.m24.ru/b/d/nBkSUhL2hFcunc-0Jr6BrNOp2Z3z8Zj21iDEh_fH_nKUPXuaDyXTjHou4MVO6BCVoZKf9GqVe5Q_CPawk214LyWK9G1N5ho=zDY7WvKbDeeMYdeUPreqag.jpg"
-                            alt="Ryan Reynolds"
-                            class="d-block"
-                            style="width:100%; height: 500px;"
-                        />
-                        <div class = "carousel-caption">
-                            <h3 style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Ryan Reynolds</h3>
-                            <p style = "color:rgb(255, 255, 255); text-shadow:rgb(0, 0, 0) 0px 0px 5px;">Handsome!</p>
-                        </div>
 
-                    </div>
-
+                    <button class = "carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class = "carousel-control-prev-icon"></span>
+                    </button>
+                    <button class = "carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class = "carousel-control-next-icon"></span>
+                    </button>
                 </div>
 
-                <button class = "carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                    <span class = "carousel-control-prev-icon"></span>
-                </button>
-                <button class = "carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                    <span class = "carousel-control-next-icon"></span>
-                </button>
+
+            </div>
+            <div id ="cards"style = "display: flex; flex-direction:row; flex-wrap:wrap;">
+                <div class="container mt-3" style = "width:800px;">
+                    <div class = "card" style = "display:flex; flex-direction: row;">
+                        <div class = "card" style = "width: 400px">
+                            <img
+                                class = "card-img-top"
+                                src = "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/db4fbef1-466a-4dec-9b7a-d4f13eb45738/600x900"
+                                alt = "Card Image"
+                                style = "width:100%"
+                            />
+                        </div>
+                        <div class = "card-body" style = "width: 50%;">
+                            <h4 class = "card-title">Главный герой</h4>
+                            <p class = "card-text">
+                                Парень по имени Парень счастлив. Он живет в лучшем в мире городе Городе, работает на лучшей в мире работе в Банке и дружит с охранником по имени Приятель. 
+                                И его совершенно не волнует, что Банк грабят по нескольку раз на дню, а улицы Города напоминают зону военных действий. 
+                                Единственное, чего Парню не хватает для полного счастья — идеальной девушки, к которой у него имеется точный список требований. 
+                                И вот однажды он видит на улице красотку, точь-в-точь как в его мечтах. Эта встреча изменит не только нашего главного героя, но и перевернёт весь известный ему мир.
+                            </p>
+                            <a href = "https://www.kinopoisk.ru/film/1199100/?utm_referrer=www.google.com" class = "btn btn-primary">Смотреть</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mt-3" style = "width:800px;">
+                    <div class = "card" style = "display:flex; flex-direction: row;">
+                        <div class = "card" style = "width: 400px">
+                            <img
+                                class = "card-img-top"
+                                src = "https://cdn.ananasposter.ru/image/cache/catalog/poster/film/99/1330-1000x830.jpg"
+                                alt = "Card Image"
+                                style = "width:100%"
+                            />
+                        </div>
+                        <div class = "card-body" style = "width: 50%; ">
+                            <h4 class = "card-title">Deadpool</h4>
+                            <p class = "card-text">
+                                Уэйд Уилсон — наёмник. Будучи побочным продуктом программы вооружённых сил под названием «Оружие X», 
+                                Уилсон приобрёл невероятную силу, проворство и способность к исцелению. Но страшной ценой: его клеточная структура постоянно меняется, а здравомыслие сомнительно. 
+                                Всё, чего хочет Уилсон, — держаться на плаву в социальной выгребной яме. Но течение в ней слишком быстрое.
+                            </p>
+                            <a href = "https://www.kinopoisk.ru/film/462360/" class = "btn btn-primary">Смотреть</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mt-3" style = "width:800px;">
+                    <div class = "card" style = "display:flex; flex-direction: row;">
+                        <div class = "card" style = "width: 400px">
+                            <img
+                                class = "card-img-top"
+                                src = "https://m.media-amazon.com/images/M/MV5BMDkxNzRmNDYtMDY0OS00N2JhLTkzZWUtMWE3MzZkNDk1MmJiXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_.jpg"
+                                alt = "Card Image"
+                                style = "width:100%"
+                            />
+                        </div>
+                        <div class = "card-body" style = "width: 50%; ">
+                            <h4 class = "card-title">Deadpool</h4>
+                            <p class = "card-text" >
+                                История начинается с таинственного исчезновения частного детектива Гарри Гудмана, расследовать которое предстоит его 21-летнему сыну Тиму. 
+                                Помощь в расследовании ему окажет бывший партнер отца, болтливый детектив Пикачу, который является загадкой даже для себя самого. 
+                                Обнаружив, что они каким-то фантастическим образом способны общаться друг с другом, Тим и Пикачу отправляются за уликами по неоновым улицам Райм Сити – современного разросшегося мегаполиса, где люди и покемоны живут бок о бок. 
+                                Парочка встречают самых разнообразных покемонов и раскрывают ужасный заговор, который способен разрушить это мирное сосуществование и стать угрозой для всей вселенной покемонов.
+                            </p>
+                            <a href = "https://www.kinopoisk.ru/film/994864/?utm_referrer=www.google.com" class = "btn btn-primary">Смотреть</a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
-
+            <div class = "container mt-3" id = "actor-info-block" style = " margin-bottom:100px;" >
+                <div style = "width:300px; margin:auto; margin-top:100px;">
+                    <button
+                    type="button"
+                    class = "btn btn-primary"
+                    data-bs-toggle = "collapse"
+                    data-bs-target = "#actor-info"
+                    style = "margin:auto;">
+                        Больше информиции об актере
+                    </button>
+                </div>
+                <div id = "actor-info" class = "collapse card show" style = "padding:10px;">
+                    Ра́йан Ро́дни Ре́йнольдс[4] (англ. Ryan Rodney Reynolds; род. 23 октября 1976, Ванкувер, Канада) — канадско-американский актёр и кинопродюсер.
+                    Он начал свою карьеру с главной роли в канадской подростковой мыльной опере «Хиллсайд» (1991—1993) и играл второстепенные роли, пока не получил главную роль в ситкоме «Два парня, девушка и пиццерия[en]» в период с 1998 по 2001 год. 
+                    Затем Рейнольдс снялся в ряде фильмов, включая такие комедии как «Король вечеринок» (2002), «Большая жратва» (2005) и «Предложение» (2009). 
+                    Он также исполнил драматические роли в фильмах «Погребённый заживо» (2010), «Женщина в золоте» (2015) и «Живое» (2017), снялся в таких боевиках, как «Блэйд: Троица» (2004), «Зелёный Фонарь» (2011), «Призрачная шестёрка» (2019) и «Главный герой» (2021), а также озвучил анимационные фильмы серии «Семейка Крудс» 
+                    (2013—2020), «Турбо» (2013) и анимационно-игровой фильм «Покемон. Детектив Пикачу» (2019).
+                    Самый большой коммерческий успех Рейнольдса пришелся на фильмы 20th Century Fox «Дэдпул» (2016) и «Дэдпул 2» (2018), в которых он сыграл главного героя. 
+                    Первый установил на момент выхода множество рекордов как для комедии с рейтингом R, а его работа принесла ему номинацию на премию Золотой Глобус и награду «Выбор критиков».
+                    Рейнольдс был назван самым сексуальным мужчиной из ныне живущих по версии журнала People в 2010 году, а в 2017 году он получил звезду на Голливудской Аллее славы. 
+                    Как бизнесмен он владеет долей в Mint Mobile и является совладельцем валлийского футбольного клуба «Рексем». 
+                </div>
+            </div>
         </div>
-        <div id ="cards"style = "display: flex;">
-            <div class="container mt-3" style = "width:800px;">
-                <div class = "card" style = "display:flex; flex-direction: row;">
-                    <div class = "card" style = "width: 400px">
-                        <img
-                            class = "card-img-top"
-                            src = "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/db4fbef1-466a-4dec-9b7a-d4f13eb45738/600x900"
-                            alt = "Card Image"
-                            style = "width:100%"
-                        />
-                    </div>
-                    <div class = "card-body" style = "width: 50%;">
-                        <h4 class = "card-title">Главный герой</h4>
-                        <p class = "card-text">
-                            Парень по имени Парень счастлив. Он живет в лучшем в мире городе Городе, работает на лучшей в мире работе в Банке и дружит с охранником по имени Приятель. 
-                            И его совершенно не волнует, что Банк грабят по нескольку раз на дню, а улицы Города напоминают зону военных действий. 
-                            Единственное, чего Парню не хватает для полного счастья — идеальной девушки, к которой у него имеется точный список требований. 
-                            И вот однажды он видит на улице красотку, точь-в-точь как в его мечтах. Эта встреча изменит не только нашего главного героя, но и перевернёт весь известный ему мир.
-                        </p>
-                        <a href = "https://www.kinopoisk.ru/film/1199100/?utm_referrer=www.google.com" class = "btn btn-primary">Смотреть</a>
-                    </div>
-                </div>
-            </div>
-            <div class="container mt-3" style = "width:800px;">
-                <div class = "card" style = "display:flex; flex-direction: row;">
-                    <div class = "card" style = "width: 400px">
-                        <img
-                            class = "card-img-top"
-                            src = "https://cdn.ananasposter.ru/image/cache/catalog/poster/film/99/1330-1000x830.jpg"
-                            alt = "Card Image"
-                            style = "width:100%"
-                        />
-                    </div>
-                    <div class = "card-body" style = "width: 50%; ">
-                        <h4 class = "card-title">Deadpool</h4>
-                        <p class = "card-text">
-                            Уэйд Уилсон — наёмник. Будучи побочным продуктом программы вооружённых сил под названием «Оружие X», 
-                            Уилсон приобрёл невероятную силу, проворство и способность к исцелению. Но страшной ценой: его клеточная структура постоянно меняется, а здравомыслие сомнительно. 
-                            Всё, чего хочет Уилсон, — держаться на плаву в социальной выгребной яме. Но течение в ней слишком быстрое.
-                        </p>
-                        <a href = "https://www.kinopoisk.ru/film/462360/" class = "btn btn-primary">Смотреть</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div data-bs-slide = "scroll" data-bs-target="navbar" data-bs-offset="50">
-            <nav class = "navbar navbar-expand-sm bg-dark fixed-bottom" style="width:100px;">
-                <div class = "container-fluid">
-                    <ul class="navbar-nav flex-column">
+        <div data-bs-slide = "scroll" data-bs-target="navbar" data-bs-offset="50" >
+            <nav class = "navbar navbar-expand-sm bg-dark fixed-bottom" style="width:100px; height: 100%;">
+                <div class = "container-fluid justify-content-center">
+                    <ul class="navbar-nav flex-column ">
                         <li class="nav-item">
-                            <a class = "nav-link" href = "#demo" style = "color:white;">Фото</a>
+                            <a class = "nav-link" href = "#actors-photos" style = "color:white;">Фото</a>
                         </li>
                         <li class="nav-item">
                             <a class = "nav-link" href = "#cards" style = "color:white;">Фильмы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class = "nav-link" href = "#actor-info-block" style = "color:white;">Info</a>
                         </li>
                     </ul>
                 </div>
