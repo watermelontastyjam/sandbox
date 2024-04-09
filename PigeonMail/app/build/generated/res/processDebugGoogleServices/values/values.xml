@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">616477901883</string>
+    <string name="google_api_key" translatable="false">AIzaSyDcExPZW0XKOoQ-faHXwXH0cB76T056Vho</string>
+    <string name="google_app_id" translatable="false">1:616477901883:android:dd7e9aa12a711a4467081e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDcExPZW0XKOoQ-faHXwXH0cB76T056Vho</string>
+    <string name="google_storage_bucket" translatable="false">pigeonmail-3a053.appspot.com</string>
+    <string name="project_id" translatable="false">pigeonmail-3a053</string>
+</resources>
