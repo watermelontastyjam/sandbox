@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "740324522902",
+    "firebase_url": "https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "pigeonmail-b4695",
+    "storage_bucket": "pigeonmail-b4695.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740324522902:android:8653e444c36850667afbb7",
+        "android_client_info": {
+          "package_name": "ru.ssau.pigeonmail"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5JRKQ1gLlreZgZOSbCyWnX3NAa-H7ba0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
