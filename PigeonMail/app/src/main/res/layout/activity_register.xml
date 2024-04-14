@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context = ".RegisterActivity"
+    android:id="@+id/reg"
+    android:background="@color/white">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="55dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            android:contentDescription="back_button"
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <LinearLayout
+            android:id="@+id/email_lin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/email_icon"
+                android:layout_width="43dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@android:drawable/ic_dialog_email" />
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:hint="Email"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:id = "@+id/email_et"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/name_lin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@color/black"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/name_icon"
+                android:layout_width="43dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <EditText
+                android:id="@+id/name_et"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:hint="Name"
+                android:textColorHint="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/password_lin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:background="@color/black"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/password_icon"
+                android:layout_width="43dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@android:drawable/ic_lock_idle_lock" />
+
+            <EditText
+                android:id="@+id/password_et"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:hint="Password"
+                android:textColorHint="@color/white"/>
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:id = "@+id/sign_up_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password_lin"
+            tools:layout_editor_absoluteX="161dp"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
