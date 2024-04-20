@@ -28,6 +28,15 @@
         <activity
             android:name=".LoginActivity"
             android:exported = "false"/>
+        <activity
+            android:name=".bottomNav.chats.ChatFragment"
+            android:exported = "false"/>
+        <activity
+            android:name=".bottomNav.new_chat.NewChatFragment"
+            android:exported = "false"/>
+        <activity
+            android:name=".bottomNav.profile.ProfileFragment"
+            android:exported = "false"/>
     </application>
 
 </manifest>
