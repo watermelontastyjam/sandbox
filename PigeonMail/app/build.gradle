@@ -38,10 +38,14 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     implementation libs.firebase.database
+    implementation libs.firebase.storage
+
     implementation (platform(libs.firebase.bom))
     //noinspection UseTomlInstead
     implementation ("com.google.firebase:firebase-auth")
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation libs.circleimageview //circle image
+    implementation libs.glide//download image, video and gif from the internet
+
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core

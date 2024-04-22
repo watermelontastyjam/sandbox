@@ -45,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         HashMap<String,String> userInfo = new HashMap<>();
                                         userInfo.put("email",binding.emailEt.getText().toString());
                                         userInfo.put("userName",binding.nameEt.getText().toString());
+                                        userInfo.put("profileImage","");
                                         FirebaseDatabase.getInstance("https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(userInfo);
                                         startActivity(new Intent(RegisterActivity.this,MainActivity.class));
