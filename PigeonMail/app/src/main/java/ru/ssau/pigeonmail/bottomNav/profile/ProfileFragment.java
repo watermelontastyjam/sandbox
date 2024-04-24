@@ -32,6 +32,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 
+import ru.ssau.pigeonmail.LoginActivity;
 import ru.ssau.pigeonmail.databinding.FragmentProfileBinding;
 
 public class ProfileFragment extends Fragment {
@@ -45,6 +46,7 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
 
         loadUserInfo();
+        signOut();
         binding.profileImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,5 +121,15 @@ public class ProfileFragment extends Fragment {
                         }
                     });
         }
+    }
+    public void signOut(){
+        binding.logoutBtn.setOnClickListener(view -> {
+            if(FirebaseAuth.getInstance().getCurrentUser() != null) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getContext(), LoginActivity.class));
+            }
+            else Toast.makeText(getContext(),"Somthing is wrong",Toast.LENGTH_SHORT).show();
+
+        });
     }
 }

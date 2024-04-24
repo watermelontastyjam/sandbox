@@ -1,5 +1,6 @@
 package ru.ssau.pigeonmail.chats;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
+import ru.ssau.pigeonmail.ChatActivity;
 import ru.ssau.pigeonmail.R;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
@@ -57,6 +59,11 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
                     }
                 });
+        holder.itemView.setOnClickListener(view ->{
+            Intent intent = new Intent(holder.itemView.getContext(), ChatActivity.class);
+            intent.putExtra("chatId",chats.get(position).getChat_id());
+            holder.itemView.getContext().startActivity(intent);
+        });
     }
 
     @Override

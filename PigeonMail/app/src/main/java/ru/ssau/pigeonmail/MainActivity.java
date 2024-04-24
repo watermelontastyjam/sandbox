@@ -29,16 +29,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         if(FirebaseAuth.getInstance().getCurrentUser() == null){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }else {
+            Map<Integer, Fragment> fragmentMap = new HashMap<>();
+            fragmentMap.put(R.id.chats, new ChatFragment());
+            fragmentMap.put(R.id.new_chat, new NewChatFragment());
+            fragmentMap.put(R.id.profile, new ProfileFragment());
+            getSupportFragmentManager().beginTransaction().replace(binding.fragmentContainer.getId(), new ChatFragment()).commit();
+            binding.bottomView.setOnItemSelectedListener(item -> {
+                Fragment fragment = fragmentMap.get(item.getItemId());
+                getSupportFragmentManager().beginTransaction().replace(binding.fragmentContainer.getId(), fragment).commit();
+                return true;
+            });
         }
-        Map<Integer, Fragment> fragmentMap = new HashMap<>();
-        fragmentMap.put(R.id.chats, new ChatFragment());
-        fragmentMap.put(R.id.new_chat, new NewChatFragment());
-        fragmentMap.put(R.id.profile, new ProfileFragment());
-        getSupportFragmentManager().beginTransaction().replace(binding.fragmentContainer.getId(),new ChatFragment()).commit();
-        binding.bottomView.setOnItemSelectedListener(item -> {
-            Fragment fragment = fragmentMap.get(item.getItemId());
-            getSupportFragmentManager().beginTransaction().replace(binding.fragmentContainer.getId(),fragment).commit();
-            return true;
-        });
     }
 }

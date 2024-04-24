@@ -8,10 +8,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Objects;
 
 import ru.ssau.pigeonmail.R;
+import ru.ssau.pigeonmail.utils.ChatUtil;
 
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
@@ -29,14 +33,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
-        holder.username_tv.setText(users.get(position).username);
-        if(users.get(position).profileImage.isEmpty()){
-            Glide.with(holder.itemView.getContext()).load(users.get(position).profileImage).into(holder.profileImage_iv);
+        User user =users.get(position);
+        holder.username_tv.setText(users.get(position).getUsername());
+        if(users.get(position).getProfileImage().isEmpty()){
+            Glide.with(holder.itemView.getContext()).load(users.get(position).getProfileImage()).into(holder.profileImage_iv);
         }
+        holder.itemView.setOnClickListener(view -> {
+            ChatUtil.createChat(user);
+        });
     }
 
     @Override
     public int getItemCount() {
         return users.size();
     }
+
 }

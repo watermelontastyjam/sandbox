@@ -99,14 +99,16 @@
                 android:hint="Password"
                 android:textColorHint="@color/white"/>
         </LinearLayout>
+
         <Button
+            android:id="@+id/sign_up_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
-            android:id = "@+id/sign_up_btn"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password_lin"
-            tools:layout_editor_absoluteX="161dp"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

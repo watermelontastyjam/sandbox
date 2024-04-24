@@ -26,22 +26,21 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(binding.emailEt.toString().isEmpty() || binding.passwordEt.toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Fields cannot be empty",Toast.LENGTH_SHORT).show();
-                }else{
-                    FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.emailEt.toString(),binding.passwordEt.toString())
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(task.isSuccessful()){
-                                        startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                                    }
+        binding.loginBtn.setOnClickListener(v -> {
+            if(binding.emailEt.toString().isEmpty() || binding.passwordEt.toString().isEmpty()){
+                Toast.makeText(getApplicationContext(),"Fields cannot be empty",Toast.LENGTH_SHORT).show();
+            }else{
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.emailEt.toString(),binding.passwordEt.toString())
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                }else{
+                                    Toast.makeText(LoginActivity.this,task.getException().toString(),Toast.LENGTH_LONG ).show();
                                 }
-                            });
-                }
+                            }
+                        });
             }
         });
         binding.goToRegActivity.setOnClickListener(new View.OnClickListener() {

@@ -46,10 +46,11 @@ public class NewChatFragment extends Fragment {
                             if(userSnapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid()))
                                 continue;
 
+                            String uid = userSnapshot.getKey();
                             String username = userSnapshot.child("userName").getValue().toString();
                             String profileImage = userSnapshot.child("profileImage").getValue().toString();
 
-                            users.add(new User(username,profileImage));
+                            users.add(new User(uid,username,profileImage));
                         }
                         binding.usersRv.setLayoutManager(new LinearLayoutManager(getContext()));
                         binding.usersRv.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));

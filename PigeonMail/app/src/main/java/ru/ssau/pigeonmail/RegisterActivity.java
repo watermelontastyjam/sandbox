@@ -2,6 +2,7 @@ package ru.ssau.pigeonmail;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -27,33 +28,29 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.signUpBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(binding.emailEt.getText().toString().isEmpty()
-                        ||
-                        binding.passwordEt.getText().toString().isEmpty()
-                        ||
-                        binding.nameEt.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Fields cannot be empty",Toast.LENGTH_SHORT).show();
-                }else{
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.emailEt.getText().toString(),binding.passwordEt.getText().toString())
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(task.isSuccessful()){
-                                        HashMap<String,String> userInfo = new HashMap<>();
-                                        userInfo.put("email",binding.emailEt.getText().toString());
-                                        userInfo.put("userName",binding.nameEt.getText().toString());
-                                        userInfo.put("profileImage","");
-                                        FirebaseDatabase.getInstance("https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                                .setValue(userInfo);
-                                        startActivity(new Intent(RegisterActivity.this,MainActivity.class));
-                                    }
-                                }
-                            });
+        binding.signUpBtn.setOnClickListener(v -> {
+            if(binding.emailEt.getText().toString().isEmpty()
+                    ||
+                    binding.passwordEt.getText().toString().isEmpty()
+                    ||
+                    binding.nameEt.getText().toString().isEmpty()){
+                Toast.makeText(getApplicationContext(),"Fields cannot be empty",Toast.LENGTH_SHORT).show();
+            }else{
+                String email = binding.emailEt.getText().toString();
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.emailEt.getText().toString(),binding.passwordEt.getText().toString())
+                        .addOnCompleteListener(task -> {
+                            if(task.isSuccessful()){
+                                HashMap<String,String> userInfo = new HashMap<>();
+                                userInfo.put("email",binding.emailEt.getText().toString());
+                                userInfo.put("userName",binding.nameEt.getText().toString());
+                                userInfo.put("profileImage","");
+                                userInfo.put("chats","");
+                                FirebaseDatabase.getInstance("https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(userInfo);
+                                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
+                            }else Toast.makeText(getApplicationContext(),task.getException().toString(),Toast.LENGTH_SHORT).show();
+                        });
 
-                }
             }
         });
 
