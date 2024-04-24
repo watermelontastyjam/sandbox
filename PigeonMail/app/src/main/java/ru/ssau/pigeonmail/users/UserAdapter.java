@@ -35,7 +35,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         User user =users.get(position);
         holder.username_tv.setText(users.get(position).getUsername());
-        if(users.get(position).getProfileImage().isEmpty()){
+        if(!users.get(position).getProfileImage().isEmpty()){
             Glide.with(holder.itemView.getContext()).load(users.get(position).getProfileImage()).into(holder.profileImage_iv);
         }
         holder.itemView.setOnClickListener(view -> {

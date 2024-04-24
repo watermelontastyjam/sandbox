@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
             if(binding.emailEt.toString().isEmpty() || binding.passwordEt.toString().isEmpty()){
                 Toast.makeText(getApplicationContext(),"Fields cannot be empty",Toast.LENGTH_SHORT).show();
             }else{
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.emailEt.toString(),binding.passwordEt.toString())
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.emailEt.getText().toString(),binding.passwordEt.getText().toString())
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

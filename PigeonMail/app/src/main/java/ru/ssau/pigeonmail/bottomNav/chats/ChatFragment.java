@@ -54,7 +54,7 @@ public class ChatFragment extends Fragment {
                        DataSnapshot chatSnapshot = snapshot.child("chats").child(chatId);
                        String userId1 = Objects.requireNonNull(snapshot.child("Chats").child(chatId).child("user1").getValue().toString());
                        String userId2 = Objects.requireNonNull(snapshot.child("Chats").child(chatId).child("user2").getValue().toString());
-                       String chatUserId = (uid.equals(userId1) ? userId1 : userId2);
+                       String chatUserId = (uid.equals(userId1) ? userId2 : userId1);
 
                        String chatName = snapshot.child("Users").child(chatUserId).child("userName").getValue().toString();
 
