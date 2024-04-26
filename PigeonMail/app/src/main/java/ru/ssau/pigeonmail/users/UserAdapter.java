@@ -3,6 +3,7 @@ package ru.ssau.pigeonmail.users;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,13 +35,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         User user =users.get(position);
+
         holder.username_tv.setText(users.get(position).getUsername());
         if(!users.get(position).getProfileImage().isEmpty()){
             Glide.with(holder.itemView.getContext()).load(users.get(position).getProfileImage()).into(holder.profileImage_iv);
         }
         holder.itemView.setOnClickListener(view -> {
             ChatUtil.createChat(user);
+            Toast.makeText(holder.itemView.getContext(), "Successfully created chat",Toast.LENGTH_SHORT).show();
         });
+
     }
 
     @Override

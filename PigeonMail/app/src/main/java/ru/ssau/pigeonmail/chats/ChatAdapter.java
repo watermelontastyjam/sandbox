@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 import ru.ssau.pigeonmail.ChatActivity;
 import ru.ssau.pigeonmail.R;
+import ru.ssau.pigeonmail.utils.ChatUtil;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     private ArrayList<Chat> chats;
@@ -63,6 +64,10 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
             Intent intent = new Intent(holder.itemView.getContext(), ChatActivity.class);
             intent.putExtra("chatId",chats.get(position).getChat_id());
             holder.itemView.getContext().startActivity(intent);
+        });
+        holder.itemView.setOnLongClickListener(view -> {
+            ChatUtil.deleteChat(chats.get(position).getChat_id());
+            return true;
         });
     }
 
