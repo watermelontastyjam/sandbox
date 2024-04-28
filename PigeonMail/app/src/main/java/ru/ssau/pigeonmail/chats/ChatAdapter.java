@@ -55,7 +55,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
                             if(!profileImage.isEmpty())
                                 Glide.with(holder.itemView.getContext()).load(profileImage).into(holder.chat_iv);
                         }catch (Exception e){
-                            Toast.makeText(holder.itemView.getContext(),"Failed to get profile image link", Toast.LENGTH_SHORT);
+                            Toast.makeText(holder.itemView.getContext(),"Failed to get profile image link", Toast.LENGTH_SHORT).show();
                         }
 
                     }

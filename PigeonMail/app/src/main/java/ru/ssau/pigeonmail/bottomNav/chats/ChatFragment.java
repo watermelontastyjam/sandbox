@@ -1,6 +1,7 @@
 package ru.ssau.pigeonmail.bottomNav.chats;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,23 +47,20 @@ public class ChatFragment extends Fragment {
                .addListenerForSingleValueEvent(new ValueEventListener() {
            @Override
            public void onDataChange(@NonNull DataSnapshot snapshot) {
-               String chatsStr = Objects.requireNonNull(snapshot.child("Users").child(uid).child("chats").getValue().toString());
-               if(!chatsStr.isEmpty()) {
-                   String[] chatsIds = chatsStr.split(",");
+               for(DataSnapshot chatSnapshot:snapshot.child("Users").child(uid).child("chats").getChildren()){
+                   String chatId = Objects.requireNonNull(chatSnapshot.getValue()).toString();
+                   String userId1 = Objects.requireNonNull(snapshot.child("Chats").child(chatId).child("user1").getValue().toString());
+                   String userId2 = Objects.requireNonNull(snapshot.child("Chats").child(chatId).child("user2").getValue().toString());
 
-                   for (String chatId : chatsIds) {
-                       DataSnapshot chatSnapshot = snapshot.child("chats").child(chatId);
-                       String userId1 = Objects.requireNonNull(snapshot.child("Chats").child(chatId).child("user1").getValue().toString());
-                       String userId2 = Objects.requireNonNull(snapshot.child("Chats").child(chatId).child("user2").getValue().toString());
-                       String chatUserId = (uid.equals(userId1) ? userId2 : userId1);
+                   String chatUserId = (uid.equals(userId1) ? userId2 : userId1);
 
-                       String chatName = snapshot.child("Users").child(chatUserId).child("userName").getValue().toString();
+                   String chatName = snapshot.child("Users").child(chatUserId).child("userName").getValue().toString();
 
-                       Chat chat = new Chat(chatId, chatName, userId1, userId2);
-                       chats.add(chat);
-                   }
+                   Chat chat = new Chat(chatId,chatName,userId1,userId2);
+                   chats.add(chat);
 
                }
+
                binding.chatsRv.setLayoutManager(new LinearLayoutManager(getContext()));
                binding.chatsRv.setAdapter(new ChatAdapter(chats));
            }

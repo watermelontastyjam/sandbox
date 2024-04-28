@@ -1,5 +1,7 @@
 package ru.ssau.pigeonmail.utils;
 
+import android.provider.ContactsContract;
+
 import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,9 +28,8 @@ public class ChatUtil {
                 .child(uid).child("chats").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String[] chatsIds = snapshot.getValue().toString().split(",");
-                        for(String chat: chatsIds){
-                            if(chat.equals(chatId))
+                        for(DataSnapshot chatsSnapshot:snapshot.getChildren()){
+                            if(chatsSnapshot.getValue().equals(chatId))
                                 return;
                         }
                         FirebaseDatabase.getInstance("https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Chats").child(chatId)
@@ -51,15 +52,9 @@ public class ChatUtil {
         return new String(charArray);
     }
     private static void addChatIdToUser(String uid,String chatId){
+
         FirebaseDatabase.getInstance().getReference().child("Users").child(uid)
-                .child("chats").get().addOnCompleteListener(task -> {
-                    if(task.isSuccessful()) {
-                        String chats = task.getResult().getValue().toString();
-                        String chatsUpd = addIdToStr(chats,chatId);
-                        FirebaseDatabase.getInstance().getReference().child("Users").child(uid)
-                                .child("chats").setValue(chatsUpd);
-                    }
-                });
+                .child("chats").push().setValue(chatId);
     }
     private static String addIdToStr(String str,String chatId){
         if(str.isEmpty())
