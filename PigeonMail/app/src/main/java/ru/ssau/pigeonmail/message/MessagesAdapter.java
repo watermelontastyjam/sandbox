@@ -1,5 +1,6 @@
 package ru.ssau.pigeonmail.message;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,29 +10,53 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.mannan.translateapi.Language;
+import com.mannan.translateapi.TranslateAPI;
 
 import java.util.List;
+import java.util.Locale;
 
 import ru.ssau.pigeonmail.R;
+import ru.ssau.pigeonmail.utils.ChatUtil;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MessageViewHolder>{
     private List<Message> messages;
+    private String langOfCurrUser;
 
     public MessagesAdapter(List<Message> messages){
         this.messages = messages;
+
     }
     @NonNull
     @Override
     public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(viewType,parent,false);
+        langOfCurrUser =  Locale.getDefault().getLanguage();
         return new MessageViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
         Message message = messages.get(position);
-        holder.messageTv.setText(message.getText());
+        TranslateAPI translateAPI = new TranslateAPI(
+                Language.AUTO_DETECT,   //Source Language
+                langOfCurrUser,         //Target Language
+                message.getText());           //Query Text
+
+        translateAPI.setTranslateListener(new TranslateAPI.TranslateListener() {
+            @Override
+            public void onSuccess(String translatedText) {
+                holder.messageTv.setText(translatedText);
+            }
+
+            @Override
+            public void onFailure(String ErrorText) {
+                holder.messageTv.setText(message.getText());
+                Log.d("ERROR", "onFailure: "+ErrorText);
+            }
+        });
+
         holder.dateTv.setText(message.getDate());
     }
 

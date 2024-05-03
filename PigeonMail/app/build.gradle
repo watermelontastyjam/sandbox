@@ -29,20 +29,24 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
-dependencies {
 
+dependencies {
+    implementation ('com.github.iammannan:TranslateAPI:1.1'){
+        exclude group:'com.android.support',module:'support-compat'
+    }
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout
     implementation libs.firebase.database
     implementation libs.firebase.storage
-
     implementation (platform(libs.firebase.bom))
+
     //noinspection UseTomlInstead
-    implementation ("com.google.firebase:firebase-auth")
+    implementation "com.google.firebase:firebase-auth"
     implementation libs.circleimageview //circle image
     implementation libs.glide//download image, video and gif from the internet
 

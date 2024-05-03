@@ -1,6 +1,7 @@
 [versions]
 agp = "8.3.2"
 circleimageview = "3.1.0"
+deeplJava = "1.5.0"
 firebaseBom = "32.8.1"
 firebaseStorage = "20.3.0"
 glide = "4.15.1"
@@ -8,14 +9,20 @@ junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
+jyandex = "1.0.0"
+libretranslateJava = "1.0.5"
 material = "1.11.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
 googleServices = "4.4.1"
 firebaseDatabase = "20.3.1"
+tikaTranslate = "2.9.2"
+yandexTranslate = "0.1.0"
+yandexTranslateApi = "1.4.2"
 
 [libraries]
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
+deepl-java = { module = "com.deepl.api:deepl-java", version.ref = "deeplJava" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-storage = { module = "com.google.firebase:firebase-storage", version.ref = "firebaseStorage" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
@@ -23,11 +30,16 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+jyandex = { module = "co.aurasphere:jyandex", version.ref = "jyandex" }
+libretranslate-java = { module = "net.clojars.suuft:libretranslate-java", version.ref = "libretranslateJava" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+tika-translate = { module = "org.apache.tika:tika-translate", version.ref = "tikaTranslate" }
+yandex-translate = { module = "yandex-translate:yandex-translate", version.ref = "yandexTranslate" }
+yandex-translate-api = { module = "com.github.vbauer:yandex-translate-api", version.ref = "yandexTranslateApi" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

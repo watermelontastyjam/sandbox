@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 import ru.ssau.pigeonmail.databinding.ActivityRegisterBinding;
 
@@ -45,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 userInfo.put("userName",binding.nameEt.getText().toString());
                                 userInfo.put("profileImage","");
                                 userInfo.put("chats","");
+                                userInfo.put("language", Locale.getDefault().getLanguage());
                                 FirebaseDatabase.getInstance("https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .setValue(userInfo);
                                 startActivity(new Intent(RegisterActivity.this,MainActivity.class));

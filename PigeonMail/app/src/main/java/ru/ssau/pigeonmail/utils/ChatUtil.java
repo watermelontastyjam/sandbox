@@ -4,9 +4,12 @@ import android.provider.ContactsContract;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -63,32 +66,36 @@ public class ChatUtil {
             str+=","+chatId;
         return str;
     }
-    public static void deleteChat(String chatId){
+    public static void deleteChat(String chatId, String userId1,String userId2){
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference();
+        ref.child("Chats").child(chatId).removeValue();
+        ref.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot chatSnapshot: snapshot.child(userId1).child("chats").getChildren()){
+                    if(chatSnapshot.getValue().equals(chatId))
+                        ref.child("Users").child(userId1).child("chats").child(chatSnapshot.getKey()).removeValue();
+                }
+                for(DataSnapshot chatSnapshot: snapshot.child(userId2).child("chats").getChildren()){
+                    if(chatSnapshot.getValue().equals(chatId))
+                        ref.child("Users").child(userId2).child("chats").child(chatSnapshot.getKey()).removeValue();
+                }
+            }
 
-        FirebaseDatabase.getInstance("https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users")
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("chats").
-                addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String[] chatsIds = Objects.requireNonNull(snapshot.getValue()).toString().split(",");
-                        String newChatsIds = null;
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                        for(String chat:chatsIds){
-                            if(!chat.equals(chatId))
-                               newChatsIds = ChatUtil.addIdToStr(newChatsIds,chat);
-                        }
-
-                        FirebaseDatabase.getInstance("https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app/").
-                                getReference().child("Users")
-                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("chats").setValue(chatId);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+            }
+        });
         FirebaseDatabase.getInstance("https://pigeonmail-b4695-default-rtdb.europe-west1.firebasedatabase.app/").getReference()
                 .child("Chats").child(chatId).removeValue();
     }
+    static public String getSecondUsersLanguage(String chatId){
+        String leng = null;
+
+        return leng;
+    }
+
 }
+

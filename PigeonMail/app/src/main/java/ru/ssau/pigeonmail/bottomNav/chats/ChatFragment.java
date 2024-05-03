@@ -1,5 +1,7 @@
 package ru.ssau.pigeonmail.bottomNav.chats;
 
+import static java.lang.Thread.sleep;
+
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
@@ -47,10 +49,16 @@ public class ChatFragment extends Fragment {
                .addListenerForSingleValueEvent(new ValueEventListener() {
            @Override
            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                for(DataSnapshot chatSnapshot:snapshot.child("Users").child(uid).child("chats").getChildren()){
+                   if(chatSnapshot.getValue() == null) return;
                    String chatId = Objects.requireNonNull(chatSnapshot.getValue()).toString();
-                   String userId1 = Objects.requireNonNull(snapshot.child("Chats").child(chatId).child("user1").getValue().toString());
-                   String userId2 = Objects.requireNonNull(snapshot.child("Chats").child(chatId).child("user2").getValue().toString());
+
+                   if(snapshot.child("Chats").child(chatId).child("user1").getValue() == null) return;
+                   String userId1 = snapshot.child("Chats").child(chatId).child("user1").getValue().toString();
+
+                   if(snapshot.child("Chats").child(chatId).child("user2").getValue() == null) return;
+                   String userId2 = snapshot.child("Chats").child(chatId).child("user2").getValue().toString();
 
                    String chatUserId = (uid.equals(userId1) ? userId2 : userId1);
 

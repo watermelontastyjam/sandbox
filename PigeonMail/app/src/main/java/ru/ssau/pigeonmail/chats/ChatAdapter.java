@@ -66,7 +66,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
             holder.itemView.getContext().startActivity(intent);
         });
         holder.itemView.setOnLongClickListener(view -> {
-            ChatUtil.deleteChat(chats.get(position).getChat_id());
+            ChatUtil.deleteChat(chats.get(position).getChat_id(),chats.get(position).getUserId1(),chats.get(position).getUserId2());
             return true;
         });
     }
