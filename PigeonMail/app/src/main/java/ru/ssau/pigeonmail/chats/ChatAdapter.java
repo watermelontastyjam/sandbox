@@ -75,4 +75,5 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     public int getItemCount() {
         return chats.size();
     }
+
 }

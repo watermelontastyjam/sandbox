@@ -65,7 +65,7 @@ public class ProfileFragment extends Fragment {
                         try{
                             ImageDecoder.Source source = ImageDecoder.createSource(requireContext().getContentResolver(), filePath);
                             Bitmap bitmap = ImageDecoder.decodeBitmap(source);
-                           binding.profileImageView.setImageBitmap(bitmap);
+                            binding.profileImageView.setImageBitmap(bitmap);
                         }catch (IOException e){
                             e.printStackTrace();
                         }
@@ -128,7 +128,7 @@ public class ProfileFragment extends Fragment {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getContext(), LoginActivity.class));
             }
-            else Toast.makeText(getContext(),"Somthing is wrong",Toast.LENGTH_SHORT).show();
+            else Toast.makeText(getContext(),"Something is wrong",Toast.LENGTH_SHORT).show();
 
         });
     }

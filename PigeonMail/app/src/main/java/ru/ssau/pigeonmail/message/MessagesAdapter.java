@@ -39,24 +39,29 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
         Message message = messages.get(position);
-        TranslateAPI translateAPI = new TranslateAPI(
-                Language.AUTO_DETECT,   //Source Language
-                langOfCurrUser,         //Target Language
-                message.getText());           //Query Text
+        String autodetectedLang = Language.AUTO_DETECT;
+        if(!autodetectedLang.equals(langOfCurrUser) ) {
+            TranslateAPI translateAPI = new TranslateAPI(
+                    Language.AUTO_DETECT,   //Source Language
+                    langOfCurrUser,         //Target Language
+                    message.getText());           //Query Text
 
-        translateAPI.setTranslateListener(new TranslateAPI.TranslateListener() {
-            @Override
-            public void onSuccess(String translatedText) {
-                holder.messageTv.setText(translatedText);
-            }
+            translateAPI.setTranslateListener(new TranslateAPI.TranslateListener() {
+                @Override
+                public void onSuccess(String translatedText) {
+                    holder.messageTv.setText(translatedText);
+                }
 
-            @Override
-            public void onFailure(String ErrorText) {
-                holder.messageTv.setText(message.getText());
-                Log.d("ERROR", "onFailure: "+ErrorText);
-            }
-        });
-
+                @Override
+                public void onFailure(String ErrorText) {
+                    holder.messageTv.setText(message.getText());
+                    Log.d("ERROR", "onFailure: " + ErrorText);
+                }
+            });
+        }
+        else {
+            holder.messageTv.setText(message.getText());
+        }
         holder.dateTv.setText(message.getDate());
     }
 
