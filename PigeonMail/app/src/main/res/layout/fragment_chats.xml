@@ -8,8 +8,9 @@
         tools:context=".bottomNav.chats.ChatFragment">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chats_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/chats_rv"/>
+            android:background="@color/background" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

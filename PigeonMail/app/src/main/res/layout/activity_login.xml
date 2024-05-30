@@ -7,43 +7,36 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ImageButton
-            android:id="@+id/back_btn"
-            android:layout_width="55dp"
-            android:layout_height="56dp"
-            android:background="@color/white"
-            android:contentDescription="back_button"
-            android:src="@android:drawable/ic_menu_revert"
-            tools:layout_editor_absoluteX="29dp"
-            tools:layout_editor_absoluteY="32dp"
-            tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        android:background="@color/background">
 
         <LinearLayout
             android:id="@+id/email_lin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/black"
+
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
             <ImageView
                 android:id="@+id/email_icon"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@android:drawable/ic_dialog_email" />
-
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@mipmap/email_image_foreground"
+                tools:ignore="MissingConstraints" />
             <EditText
                 android:id="@+id/email_et"
                 android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:hint="Email"
+                android:layout_height="48dp"
+                android:background="@drawable/bg"
+                android:hint="     Email"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                tools:ignore="MissingConstraints" />
         </LinearLayout>
 
 
@@ -52,60 +45,80 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
-            android:background="@color/black"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
             <ImageView
                 android:id="@+id/password_icon"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@android:drawable/ic_lock_idle_lock" />
+                android:layout_width="47dp"
+                android:layout_height="48dp"
+                app:srcCompat="@mipmap/lock_image_foreground"
+
+                tools:ignore="MissingConstraints" />
 
             <EditText
                 android:id="@+id/password_et"
                 android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:hint="Password"
+                android:layout_height="48dp"
+                android:background="@drawable/bg"
+                android:hint="     Password"
                 android:inputType="textPassword"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                tools:ignore="MissingConstraints" />
         </LinearLayout>
 
         <Button
             android:id="@+id/login_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="102dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#149AB1"
             android:text="Login"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="7pt"
+
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/password_lin"
             tools:ignore="MissingConstraints" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-120dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login_btn">
-
+            app:layout_constraintTop_toTopOf="parent">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New here?" />
-
+                android:text="New here? "
+                android:textColor="#FFFFFF"
+                tools:layout_editor_absoluteX="140dp"
+                tools:layout_editor_absoluteY="665dp"
+                tools:ignore="MissingConstraints" />
             <TextView
                 android:id="@+id/go_to_reg_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign up!"
-                android:textColor="#03A9F4" />
+                android:textColor="@color/buttons"
+                tools:layout_editor_absoluteX="215dp"
+                tools:layout_editor_absoluteY="665dp"
+                tools:ignore="MissingConstraints" />
+
+
+
         </LinearLayout>
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
