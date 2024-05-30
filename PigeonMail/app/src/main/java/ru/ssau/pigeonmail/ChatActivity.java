@@ -1,6 +1,7 @@
 package ru.ssau.pigeonmail;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -52,7 +53,9 @@ public class ChatActivity extends AppCompatActivity {
             sendMessage(chatId, message, date);
         });
         setContentView(binding.getRoot());
-
+    binding.backButton.setOnClickListener(view -> {
+        startActivity(new Intent(ChatActivity.this,MainActivity.class));
+    });
     }
     private void loadMessages(String chatId){
 
