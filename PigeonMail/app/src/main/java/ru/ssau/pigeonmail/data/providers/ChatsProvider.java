@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class ChatsProvider extends ContentProvider {
+    public static final String TAG = ChatsProvider.class.getSimpleName();
+
     @Override
     public boolean onCreate() {
         return false;
